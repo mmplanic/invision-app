@@ -4,14 +4,27 @@
 $color-white: #ffffff;
 $color-black: #000001;
 $color-red: #be2020;
-$color-shade: #676767;
+$color-shade--light: #676767;
+$color-shade--dark: #333333;
+
+
+
+
+//PADDING
+
+$padding-sm: 10px;
+$padding-md: 20px;
+$padding-lg: 40px; 
+
+//MARGIN
 
 
 
 //FONTS
 
-$font-primary: 'Montserrat';
-$font-secondary: 'RobotoCondensed';
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'RobotoCondensed', sans-serif;
+
 
 @font-face {
   font-family: $font-primary;
