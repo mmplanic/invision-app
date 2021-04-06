@@ -8,6 +8,42 @@ $color-shade: #676767;
 
 
 
+//FONTS
+
+$font-primary: 'Montserrat';
+$font-secondary: 'RobotoCondensed';
+
+@font-face {
+  font-family: $font-primary;
+  src: url("../assets/fonts/Montserrat/Montserrat-Black.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-BlackItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Bold.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-BoldItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-SemiBold.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Italic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Light.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-LightItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-ExtraLight.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-ExtraLightItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Medium.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-MediumItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Regular.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Thin.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-ThinItalic.ttf") format('truetype');
+   
+   font-family: $font-secondary;
+   src: url("../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf") format('truetype'),
+    url("../assets/fonts/RobotoCondensed/RobotoCondensed-BoldItalic.ttf") format('truetype'),
+    url("../assets/fonts/RobotoCondensed/RobotoCondensed-Italic.ttf") format('truetype'),
+    url("../assets/fonts/RobotoCondensed/RobotoCondensed-Light.ttf") format('truetype'),
+    url("../assets/fonts/RobotoCondensed/RobotoCondensed-LightItalic.ttf") format('truetype'),
+    url("../assets/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf") format('truetype');
+}
+
+
 
 
 // BREAKPOINTS
