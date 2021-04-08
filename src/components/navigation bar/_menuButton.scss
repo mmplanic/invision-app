@@ -1,0 +1,32 @@
+@mixin menuButton {
+    .menu-button {
+        position: relative;
+        color: white;
+        margin: 0 20px;
+
+        &>a {
+            display: block;
+            color: $color-shade--light;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@mixin menuButtonDesktop {
+    .menu-button {
+        &>a {
+            height: 30px;
+            min-height: 30px;
+            line-height: 30px;
+            padding: 3px 10px;
+            margin: 2px 0;
+            background-color: $color-shade--dark;
+            color: white;
+            border-radius: 4px;
+            &:hover {
+                background-color: $color-red;
+            }
+        }
+    }
+}

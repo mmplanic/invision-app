@@ -1,0 +1,127 @@
+ @import "../../sass/base.scss";
+ @import "./menuToggleButton";
+ @import "./menuLink";
+ @import "./menuButton";
+
+
+
+ @mixin Desktop {
+     & {
+         max-height: 40px;
+         display: flex;
+         justify-content: space-between;
+
+         & .menu {
+             position: initial;
+             width: auto;
+             transition: initial;
+             top: initial;
+             left: initial;
+             overflow: visible;
+
+             display: inline-flex;
+
+             &.active {
+                 left: initial;
+
+                 & .menu-sub {
+                     display: none;
+                 }
+             }
+
+             & .sub-menu {
+                 display: none;
+             }
+
+         }
+     }
+ }
+
+
+ .nav-bar {
+     background-color: $color-black;
+     width: 100%;
+     display: block;
+     font-family: $font-secondary;
+     font-weight: 300;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+
+     & a {
+         font-family: $font-secondary;
+         font-weight: 300;
+         height: 40px;
+         min-height: 40px;
+         line-height: 40px;
+         text-decoration: none;
+         color: inherit;
+     }
+
+     & .menu-toggle-button {
+         position: absolute !important;
+         top: 0;
+         right: 0;
+     }
+
+     & .menu {
+         max-height: 80vh;
+         overflow-y: scroll;
+         position: absolute;
+         width: 100%;
+         transition: left ease-in-out 1s;
+         top: 100%;
+         left: -100%;
+         background-color: inherit;
+
+         &.active {
+             left: 0px;
+         }
+
+     }
+
+     & .nav-bar__logo {
+         margin: 5px;
+         height: 30px;
+         width: auto;
+         margin-left: 20px;
+     }
+
+     & {
+         @include menuToggleButton
+         
+     }
+
+     & {
+        @include menuLink
+     }
+     & {
+        @include menuButton
+     }
+
+     &.--small {
+         @include breakpoint("small") {
+             @include Desktop;
+             @include menuLinkDesktop;
+             @include menuButtonDesktop;
+         }
+     }
+
+     &.--medium {
+         @include breakpoint("medium") {
+             @include Desktop;
+             @include menuLinkDesktop;
+             @include menuButtonDesktop;
+         }
+     }
+
+     &.--large {
+         @include breakpoint("large") {
+             @include Desktop;
+             @include menuLinkDesktop;
+             @include menuButtonDesktop;
+         }
+     }
+
+ }
+

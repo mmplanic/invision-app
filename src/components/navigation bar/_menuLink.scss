@@ -1,0 +1,161 @@
+@mixin menuLink {
+    .menu-link {
+        position: relative;
+        color: white;
+        margin: 0 20px;
+
+
+        &>a {
+            display: block;
+            color: $color-shade--light;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            &.active {
+                color: white;
+            }
+        }
+
+        & .sub-menu {
+            display: none;
+
+
+            & li {
+                margin: 0 20px;
+                border-bottom: 2px solid $color-shade--light;
+                color: $color-shade--light;
+                text-transform: capitalize;
+                letter-spacing: 1px;
+
+                & a {
+                    display: block;
+                    font-size: 14px;
+                    line-height: 40px;
+                    height: 40px;
+                    padding: 0 20px;
+                    &.active{
+                        color: $color-white;
+                    }
+                }
+
+                &:last-child{
+                    border: none;
+                }
+            }
+        }
+
+        &.active .sub-menu {
+            display: block;
+        }
+    }
+
+
+    & .menu-link__expand-btn {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        height: 40px;
+        width: 40px;
+        color: inherit;
+        background-color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        display: block;
+        border-left: 1px solid $color-shade--light;
+        font-size: 20px;
+    }
+}
+
+@mixin menuLinkDesktop {
+    .menu-link {
+
+        &>a {
+            &.active {
+                border-bottom: 1px solid $color-red;
+            }
+        }
+
+
+        & .sub-menu {
+            position: absolute;
+            top: 100%;
+            border: 1px solid $color-shade--light;
+            border-top: 1px solid $color-red;
+            background-color: $color-shade--dark;
+            min-width: 120px;
+            padding: 0 20px;
+
+            & li {
+                margin: 0;
+
+                & a {
+                    padding: 0;
+
+                    &:hover {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            &>a {
+                color: $color-shade--dark;
+            }
+
+            & .sub-menu {
+                display: block !important;
+            }
+        }
+
+        & .sub-menu {
+            display: none;
+        }
+
+        &.active{ 
+            & .sub-menu {
+                display: block;
+                @include breakpoint("large") { //in case state stayed active from small device
+                    display:none;
+                }
+            }
+
+            & .menu-link__expand-btn{
+                color: $color-white;
+            }
+        }
+    }
+
+    & .menu-link__expand-btn { // leave click option for sub menu if hover is not able at device (tablet)
+        font-size: 0px;
+        position: absolute;
+        float: right;
+        top: 0px;
+        left: 100%;
+        margin-left: 5px;
+        color: $color-shade--light;
+        border-left-color: $color-shade--dark;
+        &:hover{
+            color: $color-shade--dark;
+        }
+        &::after{
+            content: ' ⌄';
+            position: absolute;
+            top:0;
+            left: 5px;
+            height: 40px;
+            line-height: 27px;
+            font-size: 20px;
+        }
+        @include breakpoint("large") {
+            &::after{
+                content: '';
+            }
+            display: none;
+        }
+
+    }
+}
