@@ -2,14 +2,19 @@
  @import "./menuToggleButton";
  @import "./menuLink";
  @import "./menuButton";
+ @import "./variables";
+
 
 
 
  @mixin Desktop {
      & {
-         max-height: 40px;
          display: flex;
-         justify-content: space-between;
+         min-height: $height;
+
+         & .nav-bar__logo {
+            height: $height - 20px;
+        }
 
          & .menu {
              position: initial;
@@ -18,6 +23,7 @@
              top: initial;
              left: initial;
              overflow: visible;
+             margin-right: 10px;
 
              display: inline-flex;
 
@@ -41,16 +47,21 @@
  .nav-bar {
      background-color: $color-black;
      width: 100%;
-     display: block;
-     font-family: $font-secondary;
-     font-weight: 300;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
      position: fixed;
      left: 0px;
      top: 0px;
 
+     &*{
+        font-family: $font-family;
+        font-weight: $font-weight;
+        font-size: $font-size;
+     }
+
      & a {
          font-family: $font-secondary;
-         font-weight: 300;
          height: 40px;
          min-height: 40px;
          line-height: 40px;
@@ -59,14 +70,15 @@
      }
 
      & .menu-toggle-button {
-         position: absolute !important;
-         top: 0;
-         right: 0;
+        //  position: absolute !important;
+        //  top: 0;
+        //  right: 20px;
+        margin-right: 20px;
      }
 
      & .menu {
          max-height: 80vh;
-         overflow-y: scroll;
+         overflow-y: auto;
          position: absolute;
          width: 100%;
          transition: left ease-in-out 1s;
@@ -81,7 +93,6 @@
      }
 
      & .nav-bar__logo {
-         margin: 5px;
          height: 30px;
          width: auto;
          margin-left: 20px;

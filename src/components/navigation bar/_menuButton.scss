@@ -15,12 +15,16 @@
 
 @mixin menuButtonDesktop {
     .menu-button {
-        &>a {
-            height: 30px;
-            min-height: 30px;
-            line-height: 30px;
-            padding: 3px 10px;
-            margin: 2px 0;
+        height: $height;
+        &>* {
+            min-width: 100px;
+            height: $height - 10px;
+            $line-height: $height - 10px;
+            line-height: $line-height;
+            margin-top: 5px;
+            padding: 0 10px;
+            text-align: center;
+            
             background-color: $color-shade--dark;
             color: white;
             border-radius: 4px;

@@ -1,8 +1,8 @@
 @import "../../sass/base.scss";
     
 .header{
-    background-color: black;
-    height: 93vh;
+    background-color: rgb(9, 121, 115);
+    height: 30vh;
 
     @include breakpoint("small") {
         padding: $padding-sm;
